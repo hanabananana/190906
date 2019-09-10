@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" charset="utf-8">
+	<title>TITLE</title>
+</head>
+<body>
+	<p>READ ALL STUDENTS INFORMATION HERE</p>
+
+	{% if student_list %}
+	<ol>
+		{% for s in student_list %}
+		<li>
+			<a href="{% url 'students:stuDet' s.s_name %}">{{s.s_name}}</a>
+			<a href="{% url 'students:stuMod' s.s_name %}">MODIFY THIS DATA</a>
+			<a href="{% url 'students:stuDel' s.s_name %}">DELETE THIS DATA</a>
+		</li>
+		{% endfor %}
+	</ol>
+	{% else %}
+		<p>students : 0</p>
+	{% endif %}	
+
+	</br>
+	<a href="{% url 'students:reg' %}">REGISTER NEW STUDENT</a>
+
+</body>
+</html>
