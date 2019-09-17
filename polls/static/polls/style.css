@@ -1,0 +1,13 @@
+li a {
+	color: green;
+}
+
+body {
+	background-image: url("images/plastic-whale.jpg");
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+
+}

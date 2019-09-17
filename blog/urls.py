@@ -6,7 +6,13 @@ from . import views
 
 app_name = 'blog'
 urlpatterns = [
-    path('', views.postList, name='postList'), # localhost:8000/blog/
+    path('postList/', views.postList, name='postList'), 
+    path('<int:pk>/detail/', views.postDetail, name='postDetail'),
+    path('postNew/', views.postNew, name='postNew'),
+    path('<int:pk>/postEdit', views.postEdit, name='postEdit'),
+    path('drafts/',views.post_draft_list,name='post_draft_list'),
+    path('<int:pk>/publish', views.post_publish, name='post_publish'),
+    path('<int:pk>/remove/', views.post_remove, name='post_remove'),
 
 ]
 

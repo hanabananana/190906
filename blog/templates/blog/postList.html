@@ -1,2 +1,24 @@
+{% extends 'blog/base.html' %}
 
-THIS IS postList.html
+{% block content %}
+
+
+
+	{% if posts %}
+
+		{% for post in posts %}
+		<div>
+			<p>published: {{ post.published_data }}</p>
+			<h2><a href="{% url 'blog:postDetail' pk=post.pk %}">{{ post.title }}</a></h2>
+			<p>{{ post.text|linebreaksbr }}</p>
+		</div>
+		{% endfor %}
+
+	{% else %}
+		<p>posts : 0</p>
+	{% endif %}	
+
+
+
+
+{% endblock %}
